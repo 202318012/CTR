@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ads Conversion Rate Prediction</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <!-- <link href=".statict/styles.css" rel="stylesheet"> -->
+
+    <style>
+        body {
+    background-color: #f8f9fa;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.form-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-check-label {
+    margin-left: 5px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+.prediction {
+    margin: auto;
+}
+
+</style>
+</head>
+<body>
+    
+
+    <div class="container">
+        <div class="form-container">
+            <h2 class="form-title"> Ads Conversion Rate Prediction </h2> <br>
+            <form method="POST" action="{{ url_for('get_prediction')}}" id="form">
+
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select class="form-control" name="gender" id="gender" required>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>            
+                    </select>
+                </div>
+                
+<div class="form-group">
+    <label for="location">Location</label>
+    <select class="form-control" name="location" id="location" required>
+        <option value="Suburban">Suburban</option>
+        <option value="Urban">Urban</option>
+        <option value="Rural">Rural</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="age">Age Group</label>
+    <select class="form-control" name="age" id="age" required>
+        <option value="18-24">18-24</option>
+        <option value="25-34">25-34</option>
+        <option value="35-44">35-44</option>
+        <option value="45-54">45-54</option>
+        <option value="55-64">55-64</option>
+        <option value="65+">65+</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="language">Language</label>
+    <select class="form-control" name="language" id="language" required>
+        <option value="Hindi">Hindi</option>
+        <option value="English">English</option>
+        <option value="Spanish">Spanish</option>
+        <option value="Mandarin">Mandarin</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="edu_level">Educational Level</label>
+    <select class="form-control" name="edu_level" id="edu_level" required>
+        <option value="High School">High School</option>
+        <option value="Technical">Technical</option>
+        <option value="Bachelor">Bachelor</option>
+        <option value="Master">Master</option>
+        <option value="PhD">PhD</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="usage">Device usage</label>
+    <select class="form-control" name="usage" id="usage" required>
+        <option value="Mobile Only">Mobile Only</option>
+        <option value="Tablet">Tablet</option>
+        <option value="Desktop Only">Desktop Only</option>
+        <option value="Mobile + Desktop">Mobile + Desktop</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="income_level">Income Level</label>
+    <select class="form-control" name="income_level" id="income_level" required>
+        <option value="0-20k">0 - $20k</option>
+        <option value="20k-40k">$20k - $40k</option>
+        <option value="40k-60k">$40k - $60k</option>
+        <option value="60k-80k">$60k - $80k</option>
+        <option value="80k-100k">$80k - $100k</option>
+        <option value="100k+">$100k +</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="">Likes and Reactions</label>
+    <input type="number" min="0" class="form-control" name="likes" id="likes" required>
+</div>
+<div class="form-group">
+    <label for="">Followed Accounts</label>
+    <input type="number" min="0" class="form-control" name="followed" id="followed" required>
+</div>
+
+
+<div class="form-group">
+    <label for="firstName">Time Spent Online on Weekdays (in hours)</label>
+    <input type="number" min="0" step="0.1" max="120" class="form-control" name="weekdays" id="weekdays" required>
+</div>
+<div class="form-group">
+    <label for="firstName">Time Spent Online on Weekends (in hours)</label>
+    <input type="number" min="0" step="0.1" max="72" class="form-control" name="weekends" id="weekends" required>
+</div>
+<div class="form-group">
+    <label for="lastName">Ad Interaction Time (sec)</label>
+    <input type="number" min="0" class="form-control" name="interaction" id="interaction" required>
+</div>
+<div class="form-group">
+    <label for="lastName">Click-Through Rate</label>
+    <input type="number" min="0" max="100" step="0.1" class="form-control" name="ctr" id="ctr" required>
+
+</div>
+
+
+<button type="submit" class="btn btn-primary btn-block" >Submit</button>
+    <br>
+    <div class="prediction">
+        <h4> Conversion Rate: {{ predicted }} </h4> 
+    </div>
+</form>
+</div>
+</div>
+
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- <script>
+    document.getElementById('prediction-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        var gender = document.getElementById('gender').value;
+        var location = document.getElementById('location').value;
+        var age = document.getElementById('age').value;
+        var language = document.getElementById('language').value;
+        var edu_level = document.getElementById('edu_level').value;
+        var usage= document.getElementById('usage').value;
+        var income_level= document.getElementById('income_level').value;
+        var weekdays= document.getElementById('weekdays').value;
+        var weekends= document.getElementById('weekends').value;
+        var interaction= document.getElementById('interaction').value;
+        var ctr= document.getElementById('ctr').value;
+
+        var data = {
+            'Gender': gender,
+            'Location': location,
+
+        }
+        
+        fetch('/predict', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: JSON.stringify
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('result').innerText = JSON.stringify(data);
+        })
+        .catch(error => {
+            document.getElementById('result').innerText = 'Error: ' + error;
+        });
+    });
+</script> -->
+
+
+</body>
+</html>
