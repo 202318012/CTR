@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ads Conversion Rate Prediction</title>
-    <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <!-- <link href=".statict/styles.css" rel="stylesheet"> -->
+    
 
     <style>
         body {
@@ -171,49 +169,10 @@
 </div>
 
 
-<!-- Bootstrap JS and dependencies -->
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-<!-- <script>
-    document.getElementById('prediction-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        var gender = document.getElementById('gender').value;
-        var location = document.getElementById('location').value;
-        var age = document.getElementById('age').value;
-        var language = document.getElementById('language').value;
-        var edu_level = document.getElementById('edu_level').value;
-        var usage= document.getElementById('usage').value;
-        var income_level= document.getElementById('income_level').value;
-        var weekdays= document.getElementById('weekdays').value;
-        var weekends= document.getElementById('weekends').value;
-        var interaction= document.getElementById('interaction').value;
-        var ctr= document.getElementById('ctr').value;
-
-        var data = {
-            'Gender': gender,
-            'Location': location,
-
-        }
-        
-        fetch('/predict', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            body: JSON.stringify
-        })
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById('result').innerText = JSON.stringify(data);
-        })
-        .catch(error => {
-            document.getElementById('result').innerText = 'Error: ' + error;
-        });
-    });
-</script> -->
-
 
 </body>
 </html>

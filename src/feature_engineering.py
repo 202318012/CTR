@@ -82,13 +82,8 @@ def transform_data(train_path, test_path):
         
         path = os.path.join('datafiles', 'preprocessor.pkl')        
 
-        # pipeline = Pipeline(steps=[
-        # ('preprocessor', preprocessor),
-        # ('selector', VarianceThreshold(threshold = 0.2))])
-
         pipeline = Pipeline(steps=[
         ('preprocessor', preprocessor)])
-
 
         make_pickle(path, pipeline)
 

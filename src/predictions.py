@@ -24,13 +24,3 @@ def predict(X_test):
 
     except Exception as e:
         print('Error in predict() \nException: ',e)
-
-# if __name__ == '__main__':
-#     try:
-
-#         X_test = pd.DataFrame({'Age': ['25-34'], 'Gender': ['Male'], 'Location': ['Urban'], 'Language': ['Hindi'], 'Education Level': ['PhD'], 'Likes and Reactions': [8343], 'Followed Accounts': [307], 'Device Usage': ['Tablet'], 'Time Spent Online (hrs/weekday)': [3.7], 'Time Spent Online (hrs/weekend)': [4.2], 'Click-Through Rates (CTR)': [24], 'Ad Interaction Time (sec)': [83], 'Income Level': ['0-20k']})
-#         predict(X_test)
-
-
-#     except Exception as e:
-#         print('Error in predictions main(), \nException: ', e)
