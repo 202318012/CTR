@@ -1,6 +1,6 @@
 ### Problem Statement: Deploying a Scalable ML-Powered Ads Conversion Prediction System
 
-### Authors:
+### Authors
 1. Bhavik Manwani (202318002)
 2. Anmol Poonia (202318009)
 3. Manthan Solanki (202318012)
@@ -41,7 +41,7 @@ The objective of this project is to develop and deploy a scalable machine learni
 By deploying this system, businesses will gain a powerful tool to predict and optimize ad conversion rates, leading to more effective advertising strategies and higher return on investment (ROI). The use of AWS infrastructure ensures the system can scale seamlessly to meet demand, providing a robust and reliable solution for digital marketers.
 
 
-### Steps Performed for Predictions:
+### Steps Performed for Predictions
 
 1. Data Ingestion:	Firstly, the data is loaded and ingested from the file and split into training and testing sets.
 2. Data Engineering:    The categorical features are classified into two types: Ordinal and Nominal. A pipeline of feature transformation is created and a pickle object is created for the same which involves the following:
