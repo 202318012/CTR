@@ -1,5 +1,10 @@
 ### Problem Statement: Deploying a Scalable ML-Powered Ads Conversion Prediction System
 
+### Authors:
+1. Bhavik Manwani (202318002)
+2. Anmol Poonia (202318009)
+3. Manthan Solanki (202318012)
+
 #### Background
 
 In the highly competitive digital advertising space, understanding and predicting user behavior is critical to maximizing conversion rates. Businesses invest significantly in ads, aiming to convert views into actions, such as purchases or sign-ups. However, predicting conversion rates accurately is a complex challenge due to the myriad of factors influencing user behavior, including demographics, engagement metrics, and online activity patterns.
