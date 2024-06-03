@@ -48,9 +48,9 @@ c. Numerical Variables are scaled using StandardScaler and imputed with mean val
 
 ### Output: 
 
-![Input](https://github.com/202318012/CTR/Screenshot (264).png)
-![Input](https://github.com/202318012/CTR/Screenshot (266).png)
-![Output](https://github.com/202318012/CTR/Screenshot (267).png)
+![Input](https://github.com/202318012/CTR/blob/main/Screenshot%20(264).png)
+![Input](https://github.com/202318012/CTR/blob/main/Screenshot%20(266).png)
+![Output](https://github.com/202318012/CTR/blob/main/Screenshot%20(267).png)
 
 ### Conclusion
 
