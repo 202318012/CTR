@@ -52,6 +52,11 @@ c. Numerical Variables are scaled using StandardScaler and imputed with mean val
 3. Model Training: 	Different models like SVR, Linear Regression, Random Forest Regressor and KNN Regressor are trained by the model_training program and the model with the best score is chosen by the same. It is then re-trained and another pickle object is created for the same.
 4. Predictions:		The form input data is first converted into a Pandas DataFrame. It is then transformed with the help of preprocessor pickle object and predicted using model pickle object.
 
+### Steps to Run the Project:
+
+1. ``` docker build -t ctr . ```
+2. ``` docker run -p 5000:5000 ctr ```
+
 ### Output: 
 
 ![Input](https://github.com/202318012/CTR/blob/main/Screenshot%20(264).png)
