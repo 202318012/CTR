@@ -48,6 +48,12 @@ c. Numerical Variables are scaled using StandardScaler and imputed with mean val
 
 ### Output: 
 
+![Input](Screenshot (264).png)
+![Input](Screenshot (266).png)
+![Output](Screenshot (267).png)
+
 ### Conclusion
 
 This project demonstrates a comprehensive approach to developing and deploying a machine learning-powered prediction system using modern MLOps practices. It highlights the integration of machine learning models with web applications, containerization for consistency, and leveraging cloud infrastructure for scalability and reliability. Through this project, businesses can harness the power of machine learning to make data-driven decisions and enhance their advertising strategies.
+
+
